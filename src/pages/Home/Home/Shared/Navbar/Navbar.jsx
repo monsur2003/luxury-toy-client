@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import logo from "../../../../../assets/logo.png";
+import { Link } from "react-router-dom";
 const Navbar = () => {
    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -102,9 +103,12 @@ const Navbar = () => {
 
                {/* Login button and author image section */}
                <div className="flex items-center space-x-4">
-                  <button className="bg-primary text-white hover:text-gray-400 py-2 px-4 mr-2 rounded focus:outline-none">
-                     Login
-                  </button>
+                  <Link to="/login">
+                     {" "}
+                     <button className="bg-primary text-white hover:text-gray-400 py-2 px-4 mr-2 rounded focus:outline-none">
+                        Login
+                     </button>
+                  </Link>
                   <img
                      src="author-image.jpg"
                      alt="Author"

@@ -16,7 +16,6 @@ export default {
                "base-100": "#FFFFFF",
 
                info: "#79A4D2",
-               tightest: "-.075em",
 
                success: "#7AE1D5",
 
