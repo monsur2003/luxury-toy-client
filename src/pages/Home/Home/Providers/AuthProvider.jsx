@@ -9,6 +9,7 @@ import {
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import app from "../../../../firebase/firebase.config";
+import Swal from "sweetalert2";
 
 export const AuthContext = createContext();
 const provider = new GoogleAuthProvider();
@@ -32,6 +33,12 @@ const AuthProvider = ({ children }) => {
       return signInWithPopup(auth, provider)
          .then((result) => {
             const userLoggedIn = result.user;
+            Swal.fire({
+               title: "Login successfully!",
+               text: "Do you want to continue",
+               icon: "success",
+               confirmButtonText: "Ok",
+            });
          })
          .catch((err) => {
             console.log(err.message);

@@ -3,6 +3,7 @@ import login from "../../../../assets/login/Security On-rafiki.png";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
+import Swal from "sweetalert2";
 
 const Register = () => {
    const { createUser, signWithGmail } = useContext(AuthContext);
@@ -20,7 +21,12 @@ const Register = () => {
          .then((result) => {
             const loggedUser = result.user;
             updateDetails(loggedUser, name, photo);
-            console.log(loggedUser);
+            Swal.fire({
+               title: "User Created  successfully!",
+               text: "Do you want to continue",
+               icon: "success",
+               confirmButtonText: "Ok",
+            });
          })
          .catch((err) => {
             console.log(err.message);

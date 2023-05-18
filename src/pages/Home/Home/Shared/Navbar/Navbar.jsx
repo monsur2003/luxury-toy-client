@@ -3,6 +3,7 @@ import logo from "../../../../../assets/logo.png";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { FaUserCircle } from "react-icons/fa";
+import ActiveLink from "../ActiveLink/ActiveLink";
 const Navbar = () => {
    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -20,34 +21,34 @@ const Navbar = () => {
    const navLink = (
       <>
          {" "}
-         <ul className="flex space-x-4 lilita ">
+         <ul className="flex space-x-4 text-white lilita ">
             <li>
-               <a
+               <ActiveLink
                   href="#"
                   className="text-white hover:text-primary transition delay-200">
                   Teddy
-               </a>
+               </ActiveLink>
             </li>
             <li>
-               <a
+               <ActiveLink
                   href="#"
                   className="text-white hover:text-primary transition delay-200">
                   Add Toy
-               </a>
+               </ActiveLink>
             </li>
             <li>
-               <a
+               <ActiveLink
                   href="#"
                   className="text-white hover:text-primary transition delay-200">
                   Blog
-               </a>
+               </ActiveLink>
             </li>
             <li>
-               <a
+               <ActiveLink
                   href="#"
                   className="text-white hover:text-primary font-thin transition delay-200">
                   About
-               </a>
+               </ActiveLink>
             </li>
          </ul>
       </>

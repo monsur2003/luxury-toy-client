@@ -3,6 +3,7 @@ import login from "../../../../assets/login/Security On-amico.png";
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
+import Swal from "sweetalert2";
 const Login = () => {
    const { signWithGmail, loginUser } = useContext(AuthContext);
    const handleLogin = (event) => {
@@ -16,10 +17,21 @@ const Login = () => {
       loginUser(email, password)
          .then((result) => {
             const loginUser = result.user;
+            Swal.fire({
+               title: "Login successfully!",
+               text: "Do you want to continue",
+               icon: "success",
+               confirmButtonText: "Ok",
+            });
             console.log(loginUser);
          })
          .catch((err) => {
-            console.log(err.message);
+            Swal.fire({
+               title: `${err.message}`,
+               text: "Give your Coorrect impormation!",
+               icon: "error",
+               confirmButtonText: "Ok",
+            });
          });
    };
 
