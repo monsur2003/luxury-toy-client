@@ -1,6 +1,17 @@
 import React from "react";
 import login from "../../../../assets/login/Security On-amico.png";
+import { FaGoogle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const Login = () => {
+   const handleLogin = (event) => {
+      event.preventDefault();
+
+      const form = event.target;
+      const email = form.email.value;
+      const password = form.password.value;
+      console.log(email, password);
+   };
+
    return (
       <div className="relative flex flex-col md:flex-row  p-28 w-full my-6 bg-[#242933] overflow-hidden">
          <div className="w-[60%] h-fit">
@@ -11,26 +22,28 @@ const Login = () => {
             <h1 className="text-3xl font-semibold text-center lilita tracking-widest uppercase">
                Please Sign in
             </h1>
-            <form className="mt-6">
+            <form onSubmit={handleLogin} className="mt-6">
                <div className="mb-2">
                   <label
-                     for="email"
+                     htmlFor="email"
                      className="block text-sm font-semibold text-white">
                      Email
                   </label>
                   <input
                      type="email"
+                     name="email"
                      className="block w-full px-4 py-2 mt-2  bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                   />
                </div>
                <div className="mb-2">
                   <label
-                     for="password"
+                     htmlFor="password"
                      className="block text-sm font-semibold text-white">
                      Password
                   </label>
                   <input
                      type="password"
+                     name="password"
                      className="block w-full px-4 py-2 mt-2  bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                   />
                </div>
@@ -57,11 +70,11 @@ const Login = () => {
             <p className="mt-8 text-xs font-light text-center text-white">
                {" "}
                Don't have an account?{" "}
-               <a
-                  href="#"
+               <Link
+                  to="/signup"
                   className="poppin text-primary font-semibold hover:underline">
                   Sign up
-               </a>
+               </Link>
             </p>
          </div>
       </div>
