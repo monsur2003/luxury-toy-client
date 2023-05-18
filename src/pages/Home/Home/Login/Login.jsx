@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import login from "../../../../assets/login/Security On-amico.png";
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProvider";
 const Login = () => {
+   const { signWithGmail, loginUser } = useContext(AuthContext);
    const handleLogin = (event) => {
       event.preventDefault();
 
@@ -19,6 +21,10 @@ const Login = () => {
          .catch((err) => {
             console.log(err.message);
          });
+   };
+
+   const handleGoogle = () => {
+      signWithGmail();
    };
 
    return (
