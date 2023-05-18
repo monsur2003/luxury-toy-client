@@ -130,7 +130,7 @@ const Navbar = () => {
                      <img
                         src={user?.photoURL}
                         alt="Author"
-                        className="w-[55px] h-[55px] rounded-full"
+                        className="w-[55px] h-[55px] border-4 border-pink-600 rounded-full"
                      />
                   ) : (
                      <FaUserCircle className="text-[50px]"></FaUserCircle>

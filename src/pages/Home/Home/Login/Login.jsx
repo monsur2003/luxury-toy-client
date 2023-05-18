@@ -9,7 +9,7 @@ const Login = () => {
       event.preventDefault();
 
       const form = event.target;
-      const email = form.email.value;
+      const email = form.mail.value;
       const password = form.password.value;
       console.log(email, password);
 
@@ -46,7 +46,7 @@ const Login = () => {
                   </label>
                   <input
                      type="email"
-                     name="email"
+                     name="mail"
                      className="block w-full px-4 py-2 mt-2  bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                   />
                </div>
@@ -77,6 +77,7 @@ const Login = () => {
             <div className="flex mt-4 gap-x-2">
                <button
                   type="button"
+                  onClick={handleGoogle}
                   className="flex items-center justify-center mx-auto w-[50%]  p-2 border border-gray-600 rounded-md focus:ring-2 focus:ring-offset-1 focus:ring-violet-600">
                   Log in with Google
                </button>
