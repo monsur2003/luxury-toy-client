@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.lilita {
+   font-family: "Lilita One", cursive;
+}
+.poppin {
+   font-family: "Poppins", sans-serif;
+}

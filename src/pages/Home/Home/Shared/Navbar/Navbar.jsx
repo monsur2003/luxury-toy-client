@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import logo from "../../../../../assets/logo.png";
 const Navbar = () => {
    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -10,7 +10,7 @@ const Navbar = () => {
    const navLink = (
       <>
          {" "}
-         <ul className="flex space-x-4">
+         <ul className="flex space-x-4 lilita ">
             <li>
                <a
                   href="#"
@@ -35,7 +35,7 @@ const Navbar = () => {
             <li>
                <a
                   href="#"
-                  className="text-white hover:text-primary transition delay-200">
+                  className="text-white hover:text-primary font-thin transition delay-200">
                   About
                </a>
             </li>
@@ -51,7 +51,11 @@ const Navbar = () => {
             <div className="flex justify-between items-center py-4">
                {/* Brand logo */}
                <a href="#" className="text-white text-2xl font-bold">
-                  Brand Logo
+                  <img
+                     className="w-[140px] h-[60px] text-primary"
+                     src={logo}
+                     alt=""
+                  />
                </a>
 
                {/* Mobile menu toggle button */}
