@@ -10,6 +10,15 @@ const Login = () => {
       const email = form.email.value;
       const password = form.password.value;
       console.log(email, password);
+
+      loginUser(email, password)
+         .then((result) => {
+            const loginUser = result.user;
+            console.log(loginUser);
+         })
+         .catch((err) => {
+            console.log(err.message);
+         });
    };
 
    return (

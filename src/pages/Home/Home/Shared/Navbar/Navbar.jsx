@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import logo from "../../../../../assets/logo.png";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
+import { FaUserCircle } from "react-icons/fa";
 const Navbar = () => {
    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -8,6 +10,13 @@ const Navbar = () => {
       setIsMobileMenuOpen(!isMobileMenuOpen);
    };
 
+   const { user, logoutUser } = useContext(AuthContext);
+
+   const handleLogout = () => {
+      logoutUser();
+   };
+
+   // nav link
    const navLink = (
       <>
          {" "}
@@ -103,17 +112,29 @@ const Navbar = () => {
 
                {/* Login button and author image section */}
                <div className="flex items-center space-x-4">
-                  <Link to="/login">
-                     {" "}
-                     <button className="bg-primary text-white hover:text-gray-400 py-2 px-4 mr-2 rounded focus:outline-none">
-                        Login
+                  {user ? (
+                     <button
+                        onClick={handleLogout}
+                        className="btn btn-primary rounded-2xl">
+                        Log out
                      </button>
-                  </Link>
-                  <img
-                     src="author-image.jpg"
-                     alt="Author"
-                     className="w-8 h-8 rounded-full"
-                  />
+                  ) : (
+                     <Link to="/login">
+                        {" "}
+                        <button className="btn btn-primary rounded-2xl">
+                           Login
+                        </button>
+                     </Link>
+                  )}
+                  {user ? (
+                     <img
+                        src={user?.photoURL}
+                        alt="Author"
+                        className="w-[55px] h-[55px] rounded-full"
+                     />
+                  ) : (
+                     <FaUserCircle className="text-[50px]"></FaUserCircle>
+                  )}
                </div>
             </div>
          </div>

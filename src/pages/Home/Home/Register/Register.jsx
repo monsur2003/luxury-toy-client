@@ -1,22 +1,48 @@
-import React from "react";
+import React, { useContext } from "react";
 import login from "../../../../assets/login/Security On-rafiki.png";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProvider";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
+   const { createUser, signWithGmail } = useContext(AuthContext);
+
    const handleSubmit = (event) => {
       event.preventDefault();
 
       const form = event.target;
       const email = form.email.value;
       const password = form.password.value;
-      console.log(email, password);
+      const name = form.name.value;
+      const photo = form.photo.value;
+
+      createUser(email, password)
+         .then((result) => {
+            const loggedUser = result.user;
+            updateDetails(loggedUser, name, photo);
+            console.log(loggedUser);
+         })
+         .catch((err) => {
+            console.log(err.message);
+         });
+   };
+
+   const updateDetails = (currentUser, name, img) => {
+      updateProfile(currentUser, {
+         displayName: name,
+         photoURL: img,
+      });
+   };
+
+   const handleGoogleLogin = () => {
+      signWithGmail();
    };
 
    return (
       <div>
          <div className="relative flex flex-col md:flex-row  p-28 w-full my-6 bg-[#242933] overflow-hidden">
             <div className="w-[60%] h-fit">
-               <img className="h-[70%] w-[80%]" src={login} alt="" />
+               <img className="" src={login} alt="" />
             </div>
 
             <div className="w-[60%] h-fit  p-6 border border-pink-500  backdrop-blur-md bg-[#242940]   rounded-md shadow-xl ">
@@ -57,7 +83,7 @@ const Register = () => {
                         Photo URL
                      </label>
                      <input
-                        type="email"
+                        type="text"
                         name="photo"
                         className="block w-full px-4 py-2 mt-2  bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                      />
@@ -89,6 +115,7 @@ const Register = () => {
                <div className="flex mt-4 gap-x-2">
                   <button
                      type="button"
+                     onClick={handleGoogleLogin}
                      className="flex items-center justify-center mx-auto w-[50%]  p-2 border border-gray-600 rounded-md focus:ring-2 focus:ring-offset-1 focus:ring-violet-600">
                      Log in with Google
                   </button>
