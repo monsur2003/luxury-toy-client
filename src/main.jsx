@@ -7,7 +7,7 @@ import router from "./routes/Routes.jsx";
 import AuthProvider from "./pages/Home/Home/Providers/AuthProvider.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-   <div className="bg-[#101010] text-primary">
+   <div className="object-cover bg-fixed bg-center bg-blend-multiply text-primary">
       <React.StrictMode>
          <AuthProvider>
             <RouterProvider router={router}></RouterProvider>

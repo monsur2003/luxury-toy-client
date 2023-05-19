@@ -45,7 +45,7 @@ const Login = () => {
             <img className="h-[70%] w-[80%]" src={login} alt="" />
          </div>
 
-         <div className="w-[60%] h-fit  p-6 border border-pink-500  backdrop-blur-md bg-[#242940]   rounded-md shadow-xl ">
+         <div className="w-[60%] h-fit  p-8  border border-pink-500  backdrop-blur-md bg-[#242940]   rounded-md shadow-xl ">
             <h1 className="text-3xl font-semibold text-center lilita tracking-widest uppercase">
                Please Sign in
             </h1>

@@ -19,7 +19,7 @@ const Banner = () => {
             interval={5000}
             style={{
                width: "100%",
-               height: "80vh",
+               height: "vh",
             }}
             bullets={false}>
             <div
@@ -28,7 +28,7 @@ const Banner = () => {
                style={{
                   backgroundImage: `url(${banner1})`,
                   // width: "100%",
-                  // height: "80vh",
+                  // height: "vh",
                }}>
                <div className=" absolute inset-0 bg-[#000000cc]"></div>
                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
@@ -62,7 +62,7 @@ const Banner = () => {
                style={{
                   backgroundImage: `url(${banner2})`,
                   // width: "100%",
-                  // height: "80vh",
+                  // height: "vh",
                }}>
                <div className=" absolute inset-0 bg-[#000000cc]"></div>
                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
@@ -93,7 +93,7 @@ const Banner = () => {
                style={{
                   backgroundImage: `url(${banner3})`,
                   // width: "100%",
-                  // height: "80vh",
+                  // height: "vh",
                }}>
                <div className=" absolute inset-0 bg-[#000000cc]"></div>
                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
