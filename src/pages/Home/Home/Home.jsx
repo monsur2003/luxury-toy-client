@@ -1,9 +1,10 @@
 import React from "react";
+import Gallery from "./Gallery/Gallery";
 
 const Home = () => {
    return (
       <>
-         <h3 className="text">This is home</h3>
+         <Gallery></Gallery>
       </>
    );
 };
