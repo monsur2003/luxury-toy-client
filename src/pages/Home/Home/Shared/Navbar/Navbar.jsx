@@ -21,7 +21,7 @@ const Navbar = () => {
    const navLink = (
       <>
          {" "}
-         <ul className="flex space-x-4 text-white lilita ">
+         <ul className="md:flex md:space-x-4 text-white lilita ">
             <li>
                <ActiveLink
                   href="#"
@@ -56,7 +56,7 @@ const Navbar = () => {
 
    return (
       <nav
-         className="bg-transparent border-b border-primary"
+         className="bg-[#101010] border-b border-primary"
          style={{ backdropFilter: "blur(50px)" }}>
          <div className="container mx-auto px-4">
             <div className="flex justify-between items-center py-4">
@@ -141,8 +141,8 @@ const Navbar = () => {
          </div>
 
          {/* Mobile menu */}
-         <div className={`${isMobileMenuOpen ? "md:hidden" : "hidden"}`}>
-            {navLink}
+         <div className={`${isMobileMenuOpen ? "md:hidden " : "hidden"}`}>
+            <div className="my-2  relative left-[20%]  ">{navLink}</div>
          </div>
       </nav>
    );
