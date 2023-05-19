@@ -24,32 +24,44 @@ const Navbar = () => {
          <ul className="md:flex md:space-x-4 text-white lilita ">
             <li>
                <ActiveLink
-                  href="#"
+                  to="/"
                   className="text-white hover:text-primary transition delay-200">
-                  Teddy
+                  Home
                </ActiveLink>
             </li>
-            <li>
-               <ActiveLink
-                  href="#"
-                  className="text-white hover:text-primary transition delay-200">
-                  Add Toy
-               </ActiveLink>
-            </li>
-            <li>
-               <ActiveLink
-                  href="#"
-                  className="text-white hover:text-primary transition delay-200">
-                  Blog
-               </ActiveLink>
-            </li>
-            <li>
-               <ActiveLink
-                  href="#"
-                  className="text-white hover:text-primary font-thin transition delay-200">
-                  About
-               </ActiveLink>
-            </li>
+            {user ? (
+               <>
+                  <li>
+                     <ActiveLink
+                        to="/alltoy"
+                        className="text-white hover:text-primary transition delay-200">
+                        All Toys
+                     </ActiveLink>
+                  </li>
+                  <li>
+                     <ActiveLink
+                        to="/mytoy"
+                        className="text-white hover:text-primary transition delay-200">
+                        My Toys
+                     </ActiveLink>
+                  </li>
+                  <li>
+                     <ActiveLink
+                        to="/addtoy"
+                        className="text-white hover:text-primary font-thin transition delay-200">
+                        Add a Toy
+                     </ActiveLink>
+                  </li>
+               </>
+            ) : (
+               <li>
+                  <ActiveLink
+                     to="/blogs"
+                     className="text-white hover:text-primary font-thin transition delay-200">
+                     Blogs
+                  </ActiveLink>
+               </li>
+            )}
          </ul>
       </>
    );
