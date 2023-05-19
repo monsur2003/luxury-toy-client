@@ -29,15 +29,15 @@ const Navbar = () => {
                   Home
                </ActiveLink>
             </li>
+            <li>
+               <ActiveLink
+                  to="/alltoy"
+                  className="text-white hover:text-primary transition delay-200">
+                  All Toys
+               </ActiveLink>
+            </li>
             {user ? (
                <>
-                  <li>
-                     <ActiveLink
-                        to="/alltoy"
-                        className="text-white hover:text-primary transition delay-200">
-                        All Toys
-                     </ActiveLink>
-                  </li>
                   <li>
                      <ActiveLink
                         to="/mytoy"

@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../Home/Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddToy = () => {
+   const { user } = useContext(AuthContext);
+
    const handleSubmit = (event) => {
       event.preventDefault();
       const form = event.target;
       const name = form.name.value;
       const photo = form.photoUrl.value;
       const sellerName = form.sellername.value;
-      const email = form.email.value;
+      const email = user?.email;
       const category = form.category.value;
       const price = form.price.value;
       const quantity = form.quantity.value;
@@ -24,7 +28,25 @@ const AddToy = () => {
          rating,
          discription,
       };
-      console.log(toy);
+
+      fetch("http://localhost:5000/toys", {
+         method: "POST",
+         headers: {
+            "content-type": "application/json",
+         },
+         body: JSON.stringify(toy),
+      })
+         .then((res) => res.json())
+         .then((data) => {
+            if (data.insertedId) {
+               Swal.fire({
+                  title: "Product added successfully!",
+                  text: "Thanks for add product",
+                  icon: "success",
+                  confirmButtonText: "Okey",
+               });
+            }
+         });
    };
 
    return (
@@ -42,6 +64,9 @@ const AddToy = () => {
                      type="text"
                      id="pictureUrl"
                      name="photoUrl"
+                     defaultValue={
+                        "https://images.pexels.com/photos/760979/pexels-photo-760979.jpeg?auto=compress&cs=tinysrgb&w=600"
+                     }
                      className="w-full border border-gray-300 px-3 py-2 rounded"
                   />
                </div>
@@ -53,6 +78,7 @@ const AddToy = () => {
                      type="text"
                      id="name"
                      name="name"
+                     defaultValue={"marcidez benz"}
                      className="w-full border border-gray-300 px-3 py-2 rounded"
                   />
                </div>
@@ -63,6 +89,7 @@ const AddToy = () => {
                   <input
                      type="text"
                      id="sellerName"
+                     defaultValue={user?.displayName}
                      name="sellername"
                      className="w-full border border-gray-300 px-3 py-2 rounded"
                   />
@@ -77,6 +104,7 @@ const AddToy = () => {
                      type="email"
                      id="sellerEmail"
                      name="email"
+                     defaultValue={user?.email}
                      className="w-full border border-gray-300 px-3 py-2 rounded"
                   />
                </div>
@@ -90,6 +118,7 @@ const AddToy = () => {
                      type="text"
                      id="subCategory"
                      name="category"
+                     defaultValue={"Toyota"}
                      className="w-full border border-gray-300 px-3 py-2 rounded"
                   />
                </div>
@@ -98,7 +127,7 @@ const AddToy = () => {
                      Price:
                   </label>
                   <input
-                     type="number"
+                     type="text"
                      id="price"
                      name="price"
                      className="w-full border border-gray-300 px-3 py-2 rounded"
@@ -109,7 +138,7 @@ const AddToy = () => {
                      Rating:
                   </label>
                   <input
-                     type="number"
+                     type="text"
                      id="rating"
                      name="rating"
                      className="w-full border border-gray-300 px-3 py-2 rounded"
@@ -134,6 +163,9 @@ const AddToy = () => {
                <textarea
                   id="description"
                   name="discription"
+                  defaultValue={
+                     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem explicabo, ad officiis aperiam voluptates eligendi fugit! Esse nemo tempore assumenda maiores odio ipsa ea, molestias ducimus eligendi ipsum exercitationem voluptatum."
+                  }
                   className="w-full border border-gray-300 px-3 py-2 rounded"
                   rows="4"></textarea>
             </div>
