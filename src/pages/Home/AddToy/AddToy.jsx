@@ -50,10 +50,12 @@ const AddToy = () => {
    };
 
    return (
-      <div className="  p-4 my-11 pt-5  rounded-md bg-[#242933] mx-auto">
-         <h2 className="text-2xl font-bold mb-4">Create a New Toy Listing</h2>
+      <div className=" py-8 bg-[#242933] mx-auto">
+         <h2 className="text-2xl text-center lilita tracking-widest  font-bold mb-4">
+            Create a New Toy Listing
+         </h2>
          <form
-            className="w-[70%]  mx-auto border rounded-lg border-pink-500 p-4"
+            className="w-[70%] poppin  mx-auto border rounded-lg border-pink-500 p-6 shadow-2xl shadow-pink-600"
             onSubmit={handleSubmit}>
             <div className="grid md:grid-cols-2 gap-2 grid-cols-1">
                <div className="mb-4">

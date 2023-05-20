@@ -1,27 +1,26 @@
-// import React, { useContext } from "react";
-// import { AuthContext } from "../AuthProvider/AuthProvider";
-// import { Navigate, useLocation } from "react-router-dom";
-// import { GridLoader } from "react-spinners";
+import React, { useContext } from "react";
 
-// const PrivateRoute = () => {
-//    const { user, loading } = useContext(AuthContext);
-//    const location = useLocation();
+import { Navigate } from "react-router-dom";
+import { AuthContext } from "../pages/Home/Home/Providers/AuthProvider";
 
-//    if (loading) {
-//       return (
-//          <>
-//             <div className="flex  text-center items-center justify-center">
-//                <GridLoader color="#36d7b7" />
-//             </div>
-//          </>
-//       );
-//    }
+const PrivateRoute = ({ children }) => {
+   const { user, loading } = useContext(AuthContext); //    const location = useLocation();
 
-//    if (user) {
-//       return children;
-//    }
+   if (loading) {
+      return (
+         <>
+            <div className="flex  text-center items-center justify-center">
+               <span class="loader">L &nbsp; ading</span>
+            </div>
+         </>
+      );
+   }
 
-//    return <Navigate to="/login" state={{ from: location }} replace></Navigate>;
-// };
+   if (user) {
+      return children;
+   }
 
-// export default PrivateRoute;
+   return <Navigate to="/login"></Navigate>;
+};
+
+export default PrivateRoute;

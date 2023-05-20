@@ -46,14 +46,20 @@ const MyToy = () => {
             }
          });
    };
+
+   const handleUpdate = (id) => {
+      console.log("update button clicked", id);
+   };
+
    //    console.log(mytoy);
    return (
       <div>
          {/* <h3>My toy {toys.length}</h3> */}
-         <div>
+         <div className="bg-[#242933] py-6">
             {toys.map((toy) => (
                <MyToyCard
                   handleDelete={handleDelete}
+                  handleUpdate={handleUpdate}
                   key={toy._id}
                   toy={toy}></MyToyCard>
             ))}
