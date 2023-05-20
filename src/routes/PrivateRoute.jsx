@@ -9,7 +9,7 @@ const PrivateRoute = ({ children }) => {
    if (loading) {
       return (
          <>
-            <div className="flex  text-center items-center justify-center">
+            <div className="flex bg-[#10101010]  text-center items-center justify-center">
                <span class="loader">L &nbsp; ading</span>
             </div>
          </>

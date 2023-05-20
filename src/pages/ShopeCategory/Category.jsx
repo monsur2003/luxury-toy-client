@@ -11,7 +11,7 @@ const Category = () => {
             </TabList>
 
             <TabPanel>
-               <h2>Any content 1</h2>
+               <h3>hello</h3>
             </TabPanel>
             <TabPanel>
                <h2>Any content 2</h2>
