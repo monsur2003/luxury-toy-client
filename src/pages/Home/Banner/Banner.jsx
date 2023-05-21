@@ -11,11 +11,11 @@ const Banner = () => {
          style={{
             backgroundImage: `url(${banner})`,
          }}>
-         <div className=" bg-gradient-to-t from-[#090834cf] to-[#14052555] w-full h-full">
+         <div className=" bg-gradient-to-tr from-[#090834ec] to-[#00000055] w-full h-full">
             {" "}
             <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
                <div className="flex flex-col items-center md:pt-28 justify-center">
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-6">
+                  <h1 className="text-4xl lilita tracking-widest text-gray-200  md:text-5xl lg:text-6xl font-bold text-center mb-6">
                      Explore Our Exquisite <br /> Toy Cars Collection
                   </h1>
                   <p className="text-lg md:text-xl lg:text-2xl text-white text-center mb-10">

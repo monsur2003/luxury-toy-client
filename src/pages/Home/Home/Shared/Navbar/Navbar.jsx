@@ -68,18 +68,16 @@ const Navbar = () => {
 
    return (
       <nav
-         className="bg-[#101010] top-0 right-0 left-0 z-[200]  border-b border-primary"
+         className="bg-[#020625] top-0 right-0 left-0 z-[200]  border-b border-primary"
          style={{ backdropFilter: "blur(50px)" }}>
          <div className="container mx-auto px-4">
             <div className="flex justify-between items-center py-4">
                {/* Brand logo */}
-               <a href="#" className="text-white text-2xl font-bold">
-                  <img
-                     className="w-[140px] h-[60px] text-primary"
-                     src={logo}
-                     alt=""
-                  />
-               </a>
+               <div>
+                  <h2 className="text-4xl lilita tracking-widest">
+                     Luxury<span className="text-white">Toy</span>
+                  </h2>
+               </div>
 
                {/* Mobile menu toggle button */}
                <div className="block md:hidden">
@@ -139,15 +137,19 @@ const Navbar = () => {
                         </button>
                      </Link>
                   )}
-                  {user ? (
-                     <img
-                        src={user?.photoURL}
-                        alt="Author"
-                        className="w-[55px] h-[55px] border-4 border-pink-600 rounded-full"
-                     />
-                  ) : (
-                     <FaUserCircle className="text-[50px]"></FaUserCircle>
-                  )}
+                  <div className="tooltip tooltip-open">
+                     {user ? (
+                        <img
+                           src={user?.photoURL}
+                           data-tip={user?.displayName}
+                           title={user.displayName}
+                           alt="Author"
+                           className="w-[55px] text-white cursor-pointer h-[55px] border-4 border-pink-600 rounded-full"
+                        />
+                     ) : (
+                        <FaUserCircle className="text-[50px]"></FaUserCircle>
+                     )}
+                  </div>
                </div>
             </div>
          </div>

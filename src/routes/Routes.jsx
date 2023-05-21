@@ -10,11 +10,13 @@ import MyToy from "../pages/MyToy/MyToy";
 import UpdateToy from "../pages/MyToy/UpdateToy/UpdateToy";
 import ViewDetails from "../pages/ViewDetails/ViewDetails";
 import PrivateRoute from "./PrivateRoute";
+import Error from "../pages/Error/Error";
 
 const router = createBrowserRouter([
    {
       path: "/",
       element: <Main></Main>,
+      errorElement: <Error></Error>,
 
       children: [
          {
@@ -50,7 +52,7 @@ const router = createBrowserRouter([
             element: <UpdateToy></UpdateToy>,
 
             loader: ({ params }) =>
-               fetch(`http://localhost:5000/toys/${params.id}`),
+               fetch(`https://teddyland-server.vercel.app/toys/${params.id}`),
          },
          {
             path: "/view/:id",
@@ -60,7 +62,7 @@ const router = createBrowserRouter([
                </PrivateRoute>
             ),
             loader: ({ params }) =>
-               fetch(`http://localhost:5000/toys/${params.id}`),
+               fetch(`https://teddyland-server.vercel.app/toys/${params.id}`),
          },
       ],
    },

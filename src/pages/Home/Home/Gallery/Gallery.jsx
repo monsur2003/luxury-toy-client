@@ -13,61 +13,118 @@ import image10 from "../../../../assets/gallery/gallery (10).jpg";
 import image11 from "../../../../assets/gallery/gallery (11).jpg";
 import image12 from "../../../../assets/gallery/gallery (12).jpg";
 import image13 from "../../../../assets/gallery/gallery (13).jpg";
+// import GalleryCard from "./GalleryCard";
 
 const Gallery = () => {
-   const data = [
-      {
-         id: 1,
-         imgage: image1,
-      },
-      {
-         id: 2,
-         imgage: image2,
-      },
-      {
-         id: 3,
-         imgage: image4,
-      },
-      {
-         id: 4,
-         imgage: image6,
-      },
-      {
-         id: 5,
-         imgage: image5,
-      },
-      {
-         id: 6,
-         imgage: image7,
-      },
-      {
-         id: 7,
-         imgage: image10,
-      },
-      {
-         id: 8,
-         imgage: image12,
-      },
-      {
-         id: 9,
-         imgage: image9,
-      },
-      {
-         id: 10,
-         imgage: image13,
-      },
-   ];
-
    return (
-      <div className="gallery w-[80%] mx-auto">
-         {data.map((d) => (
-            <img
-               className="border-4 space-y-3 border-[#050229f9]"
-               key={d.id}
-               src={d.imgage}
-            />
-         ))}
-      </div>
+      <>
+         <div className="mt-16 w-[100%] mx-auto">
+            <div className="text-center mb-6">
+               <h2 className="text-5xl lilita tracking-widest ">
+                  Our Cars Gallery
+               </h2>
+
+               <p className="py-2 text-white font-semibold">
+                  Welcome to our enchanting Teddy Gallery! Explore a delightful
+                  collection <br /> of cars that will warm your heart.
+               </p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+               <div class="grid gap-4">
+                  <div data-aos="fade-down-right">
+                     <img
+                        className="h-auto max-w-full rounded-lg"
+                        src={image2}
+                        alt=""
+                     />
+                  </div>
+                  <div data-aos="flip-left">
+                     <img
+                        className="h-auto max-w-full rounded-lg"
+                        src={image1}
+                        alt=""
+                     />
+                  </div>
+                  <div data-aos="flip-down">
+                     <img
+                        className="h-auto max-w-full rounded-lg"
+                        src={image3}
+                        alt=""
+                     />
+                  </div>
+               </div>
+               <div class="grid gap-4">
+                  <div data-aos="flip-right">
+                     <img
+                        className="h-auto max-w-full rounded-lg"
+                        src={image4}
+                        alt=""
+                     />
+                  </div>
+                  <div data-aos="zoom-in">
+                     <img
+                        className="h-auto max-w-full rounded-lg"
+                        src={image5}
+                        alt=""
+                     />
+                  </div>
+                  <div data-aos="zoom-in-down">
+                     <img
+                        className="h-auto max-w-full rounded-lg"
+                        src={image7}
+                        alt=""
+                     />
+                  </div>
+               </div>
+               <div class="grid gap-4">
+                  <div data-aos="zoom-in-left">
+                     <img
+                        className="h-auto max-w-full rounded-lg"
+                        src={image6}
+                        alt=""
+                     />
+                  </div>
+                  <div data-aos="zoom-in-left">
+                     <img
+                        className="h-auto max-w-full rounded-lg"
+                        src={image9}
+                        alt=""
+                     />
+                  </div>
+                  <div data-aos="zoom-in-left">
+                     <img
+                        className="h-auto max-w-full rounded-lg"
+                        src={image10}
+                        alt=""
+                     />
+                  </div>
+               </div>
+               <div class="grid gap-4">
+                  <div data-aos="zoom-in-left">
+                     <img
+                        className="h-auto max-w-full rounded-lg"
+                        src={image11}
+                        alt=""
+                     />
+                  </div>
+                  <div data-aos="zoom-out-up">
+                     <img
+                        className="h-auto max-w-full rounded-lg"
+                        src={image12}
+                        alt=""
+                     />
+                  </div>
+                  <div data-aos="fade-up" data-aos-duration="3000">
+                     <img
+                        className="h-auto max-w-full rounded-lg"
+                        src={image13}
+                        alt=""
+                     />
+                  </div>
+               </div>
+            </div>
+         </div>
+      </>
    );
 };
 

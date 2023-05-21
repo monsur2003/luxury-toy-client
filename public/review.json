@@ -1,0 +1,52 @@
+[
+   {
+      "rating": 5,
+      "photo": "https://i.ibb.co/nfxK903/client-1.jpg",
+      "review": "I absolutely love this toy car! The design is sleek, and it's super fun to play with. Highly recommended!"
+   },
+   {
+      "rating": 4,
+      "photo": "https://i.ibb.co/PcwkY4s/client-3.jpg",
+      "review": "The toy car is great, and my kid enjoys playing with it. The only downside is that the wheels sometimes get stuck."
+   },
+   {
+      "rating": 5,
+      "photo": "https://i.ibb.co/xjdJSZg/jurica-koletic-7-YVZYZe-ITc8-unsplash.jpg",
+      "review": "This toy car exceeded my expectations! It's durable, fast, and the remote control works flawlessly. I'm impressed!"
+   },
+   {
+      "rating": 3,
+      "photo": "https://i.ibb.co/bv48775/client-4.jpg",
+      "review": "The toy car is decent, but it feels a bit flimsy. The battery life could be better as well. Average performance overall."
+   },
+   {
+      "rating": 4,
+      "photo": "https://i.ibb.co/PmfnJrb/client-2.jpg",
+      "review": "I bought this toy car for my nephew, and he's having a blast with it! It's sturdy and provides hours of entertainment."
+   },
+   {
+      "rating": 2,
+      "photo": "https://i.ibb.co/RpJw1ry/joseph-gonzalez-i-Fg-Rcq-Hznqg-unsplash.jpg",
+      "review": "I'm disappointed with the toy car's quality. It broke after just a few uses, and the customer service was unhelpful."
+   },
+   {
+      "rating": 4,
+      "photo": "https://i.ibb.co/fNBcXpb/client-5.jpg",
+      "review": "The toy car looks fantastic, and it performs well. The only drawback is that it's a bit noisy when in use."
+   },
+   {
+      "rating": 5,
+      "photo": "https://i.ibb.co/9sPshc6/oliver-ragfelt-kh-V4f-Ty6-D8-unsplash.jpg",
+      "review": "I can't express how happy my child is with this toy car! It's their favorite toy, and the quality is top-notch."
+   },
+   {
+      "rating": 3,
+      "photo": "https://i.ibb.co/TRDknmp/vinicius-amnx-amano-0-NCjj-D0z-Gnw-unsplash.jpg",
+      "review": "The toy car is okay, but the remote control range is limited. It works fine within close proximity, though."
+   },
+   {
+      "rating": 5,
+      "photo": "https://i.ibb.co/BszK1zF/amir-seilsepour-5vg-Sar-Qim-A-unsplash.jpg",
+      "review": "I'm amazed by the attention to detail in this toy car. It's a collector's dream come true, and it looks stunning on display!"
+   }
+]

@@ -1,37 +1,39 @@
 import React from "react";
-import img1 from "../../../assets/banner/befunky_2023-4-0_0-18-21.jpg";
-import img2 from "../../../assets/banner/befunky_2023-4-0_0-20-53.jpg";
+import img1 from "../../../assets/banner/befunky_2023-4-0_0-20-53.jpg";
+import img2 from "../../../assets/banner/giorgio-trovato-0CZwuZhiC84-unsplash.jpg";
+import img3 from "../../../assets/banner/eric-nopanen-EufBdG-ZQMs-unsplash.jpg";
+import img4 from "../../../assets/banner/befunky_2023-4-0_0-18-41.jpg";
 
 const Offer = () => {
    return (
       <div className=" justify-center items-center my-10 md:] md:space-x-24 md:items-center  flex-col md:flex-row p-5 py-10   mx-auto flex md:justify-between">
          <div className="grid grid-cols-2 md:w-2/3 gap-4">
             <img
-               src={img2}
+               src={img1}
                data-aos="fade-right"
                data-aos-duration="1000"
-               className="md:w-[500px] w-full  md:rounded-tl-[30%]   rounded-md "
+               className="md:w-[500px] h-[200px]  md:rounded-tl-[30%]   rounded-md "
                alt=""
             />
             <img
                src={img2}
                data-aos="fade-left"
                data-aos-duration="1000"
-               className="md:w-[500px] w-full rounded-md  "
+               className="md:w-[500px] md:h-[200px] w-full rounded-sm  "
                alt=""
             />
             <img
-               src={img2}
+               src={img3}
                data-aos="fade-right"
                data-aos-duration="1000"
-               className="md:w-[500px] w-full  rounded-md "
+               className="md:w-[500px] md:h-[200px] w-full rounded-sm"
                alt=""
             />
             <img
-               src={img2}
+               src={img4}
                data-aos="fade-left"
                data-aos-duration="1000"
-               className="md:w-[500px] w-full md:rounded-br-[30%] rounded-md  "
+               className="md:w-[500px] md:h-[200px] w-full md:rounded-br-[30%] rounded-md  "
                alt=""
             />
          </div>

@@ -10,15 +10,14 @@ const MyToy = () => {
    useTitle("Mytoys");
 
    useEffect(() => {
-      fetch(`http://localhost:5000/toys?email=${user?.email}`)
-         // fetch("http://localhost:5000/toys")
+      fetch(`https://teddyland-server.vercel.app/toys?email=${user?.email}`)
          .then((res) => res.json())
          .then((data) => setToys(data));
    }, []);
 
    const handleDelete = (id) => {
       console.log(id, "from delete btn");
-      fetch(`http://localhost:5000/toys/${id}`, {
+      fetch(`https://teddyland-server.vercel.app/toys/${id}`, {
          method: "DELETE",
       })
          .then((res) => res.json())
@@ -52,11 +51,11 @@ const MyToy = () => {
       console.log("update button clicked", id);
    };
 
-   //    console.log(mytoy);
+   console.log(toys);
    return (
       <div>
          {/* <h3>My toy {toys.length}</h3> */}
-         <div className="bg-[#242933] grid grid-cols-1 md:grid-cols-2 py-6">
+         <div className="bg-[#242933]  py-6">
             {toys.map((toy) => (
                <MyToyCard
                   handleDelete={handleDelete}

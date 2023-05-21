@@ -1,13 +1,19 @@
 import React, { useContext } from "react";
 import login from "../../../../assets/login/Security On-amico.png";
 import { FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import useTitle from "../../../../hook/useTitle";
 const Login = () => {
    const { signWithGmail, loginUser } = useContext(AuthContext);
    useTitle("Login");
+
+   const navigate = useNavigate();
+   const location = useLocation();
+   console.log(location);
+   const from = location.state?.from?.pathname || "/";
+
    const handleLogin = (event) => {
       event.preventDefault();
 
@@ -25,6 +31,8 @@ const Login = () => {
                icon: "success",
                confirmButtonText: "Ok",
             });
+            navigate(from, { replace: true });
+            form.reset();
             console.log(loginUser);
          })
          .catch((err) => {
@@ -39,6 +47,7 @@ const Login = () => {
 
    const handleGoogle = () => {
       signWithGmail();
+      navigate(from, { replace: true });
    };
 
    return (

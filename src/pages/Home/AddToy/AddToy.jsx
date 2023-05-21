@@ -30,7 +30,7 @@ const AddToy = () => {
       };
       console.log(toy);
 
-      fetch("http://localhost:5000/toys", {
+      fetch("https://teddyland-server.vercel.app/toys", {
          method: "POST",
          headers: {
             "content-type": "application/json",
@@ -67,9 +67,6 @@ const AddToy = () => {
                      type="text"
                      id="pictureUrl"
                      name="photoUrl"
-                     defaultValue={
-                        "https://images.pexels.com/photos/760979/pexels-photo-760979.jpeg?auto=compress&cs=tinysrgb&w=600"
-                     }
                      className="w-full border border-gray-300 px-3 py-2 rounded"
                   />
                </div>
@@ -81,7 +78,6 @@ const AddToy = () => {
                      type="text"
                      id="name"
                      name="name"
-                     defaultValue={"marcidez benz"}
                      className="w-full border border-gray-300 px-3 py-2 rounded"
                   />
                </div>
@@ -164,9 +160,6 @@ const AddToy = () => {
                <textarea
                   id="description"
                   name="discription"
-                  defaultValue={
-                     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem explicabo, ad officiis aperiam voluptates eligendi fugit! Esse nemo tempore assumenda maiores odio ipsa ea, molestias ducimus eligendi ipsum exercitationem voluptatum."
-                  }
                   className="w-full border border-gray-300 px-3 py-2 rounded"
                   rows="4"></textarea>
             </div>

@@ -5,47 +5,79 @@ import useTitle from "../../hook/useTitle";
 
 const AllToy = () => {
    const [toys, setToys] = useState([]);
-   const url = "http://localhost:5000/toys";
+   const [filteredToys, setFilteredToys] = useState([]);
+   const url = "https://teddyland-server.vercel.app/toys";
+
    useEffect(() => {
       fetch(url)
          .then((res) => res.json())
-         .then((data) => setToys(data));
+         .then((data) => {
+            setToys(data);
+            setFilteredToys(data);
+         });
    }, []);
 
-   console.log("toys from server", toys);
-   useTitle("Altoy");
+   useTitle("All Toy");
 
    const handleSearch = (event) => {
       event.preventDefault();
       const name = event.target.name.value;
-      console.log(name);
+
+      const filtered = toys.filter((toy) =>
+         toy.name.toLowerCase().includes(name.toLowerCase())
+      );
+
+      setFilteredToys(filtered);
+   };
+
+   const handleSortAscending = () => {
+      const sortedToys = [...filteredToys].sort((a, b) => a.price - b.price);
+      setFilteredToys(sortedToys);
+   };
+
+   const handleSortDescending = () => {
+      const sortedToys = [...filteredToys].sort((a, b) => b.price - a.price);
+      setFilteredToys(sortedToys);
    };
 
    return (
       <>
          <div>
             <h2 className="my-2 text-6xl lilita tracking-widest text-center">
-               All Toy List{" "}
+               All Toy List
             </h2>
          </div>
-         <form
-            onSubmit={handleSearch}
-            className=" flex my-6 justify-center items-center ">
-            <div>
+         <div className="flex justify-between items-center px-3">
+            <form
+               onSubmit={handleSearch}
+               className="flex my-6 justify-center items-center">
+               <div>
+                  <input
+                     name="name"
+                     className="input rounded-r-none"
+                     type="text"
+                  />
+               </div>
                <input
-                  name="name"
-                  className="input rounded-r-none"
-                  type="text"
+                  type="submit"
+                  className="btn btn-primary rounded-l-none"
+                  value="Submit"
                />
+            </form>
+
+            <div className="space-x-2">
+               <button
+                  className="btn btn-primary"
+                  onClick={handleSortAscending}>
+                  Ascending
+               </button>
+               <button
+                  className="btn btn-secondary"
+                  onClick={handleSortDescending}>
+                  Descending
+               </button>
             </div>
-
-            <input
-               type="submit"
-               className="btn btn-primary rounded-l-none"
-               value="Submit"
-            />
-         </form>
-
+         </div>
          <table className="min-w-full mb-5 bg-[#242933] divide-y divide-gray-200">
             <thead>
                <tr className="bg-pink-800">
@@ -73,7 +105,7 @@ const AllToy = () => {
                </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
-               {toys.map((toy, index) => (
+               {filteredToys.map((toy, index) => (
                   <tr className="bg-[#242933] poppin" key={toy._id}>
                      <td className="px-6 py-4 text-gray-200 whitespace-nowrap">
                         {index + 1}
@@ -95,7 +127,6 @@ const AllToy = () => {
                      </td>
                      <td className="px-6 py-4 text-gray-200 whitespace-nowrap text-right text-sm font-medium">
                         <Link to={`/view/${toy._id}`}>
-                           {" "}
                            <button className="btn btn-primary">
                               <FaEye className="text-2xl" />
                            </button>

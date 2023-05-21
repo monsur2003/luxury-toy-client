@@ -36,7 +36,7 @@ const UpdateToy = () => {
          quantity,
          discription,
       };
-      fetch(`http://localhost:5000/toys/${_id}`, {
+      fetch(`https://teddyland-server.vercel.app/toys/${_id}`, {
          method: "PUT",
          headers: {
             "content-type": "application/json",
@@ -92,7 +92,7 @@ const UpdateToy = () => {
                </div>
                <div>
                   <label htmlFor="quantity" className="block text-white">
-                     Quantity
+                     Name
                   </label>
                   <input
                      type="text"
@@ -119,9 +119,6 @@ const UpdateToy = () => {
             <textarea
                id="description"
                name="discription"
-               defaultValue={
-                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem explicabo, ad officiis aperiam voluptates eligendi fugit! Esse nemo tempore assumenda maiores odio ipsa ea, molestias ducimus eligendi ipsum exercitationem voluptatum."
-               }
                className="w-full border border-gray-300 px-3 py-2 rounded"
                rows="4"></textarea>
             <button className="btn btn-primary">submit</button>

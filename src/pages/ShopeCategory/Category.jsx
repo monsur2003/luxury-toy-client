@@ -12,7 +12,9 @@ const Category = () => {
 
    console.log(categorys);
    useEffect(() => {
-      fetch(`http://localhost:5000/category?category=${categorys}`)
+      fetch(
+         `https://teddyland-server.vercel.app/category?category=${categorys}`
+      )
          .then((res) => res.json())
          .then((data) => setDatas(data));
    }, [categorys]);
@@ -23,7 +25,7 @@ const Category = () => {
          <div
             data-aos="fade-up"
             data-aos-duration="1000"
-            className="grid  border-t-2 border-pink-600 md:p-3 p-7 rounded-lg  space-x-2 grid-cols-1 md:grid-cols-3">
+            className="grid   border-t-2 border-pink-600 md:p-3 p-7 rounded-lg  space-x-2 grid-cols-1 md:grid-cols-3">
             {datas.slice(0, 3).map((data) => (
                <div>
                   <div className="card border-4 rounded-lg border-[#7b055d] w-full my-4 shadow-lg shadow-pink-800 card-compact md:w-96 md:shadow-blue-900 bg-base-300 md:shadow-lg">
@@ -80,31 +82,37 @@ const Category = () => {
    );
 
    return (
-      <div className="flex justify-center items-center">
-         <Tabs>
-            <TabList className="flex justify-center space-x-4">
-               <Tab
-                  onClick={() => setCategorys("Sports")}
-                  className="cursor-pointer btn btn-primary">
-                  Sports Car
-               </Tab>
-               <Tab
-                  action="activate"
-                  onClick={() => setCategorys("Dump Truck")}
-                  className="cursor-pointer btn btn-primary">
-                  Dump Truck
-               </Tab>
-               <Tab
-                  onClick={() => setCategorys("Racing Car")}
-                  className="cursor-pointer btn btn-primary">
-                  Racing Car
-               </Tab>
-            </TabList>
-            {card}
-            <TabPanel></TabPanel>
-            {/* <TabPanel>{card}</TabPanel>
+      <div className="mt-8">
+         <h2 className="text-center text-4xl lilita text-white tracking-widest my-2">
+            Toys By Category
+         </h2>
+
+         <div className="flex my-8 justify-center items-center">
+            <Tabs>
+               <TabList className="flex justify-center space-x-4">
+                  <Tab
+                     onClick={() => setCategorys("Sports")}
+                     className="cursor-pointer btn btn-primary">
+                     Sports Car
+                  </Tab>
+                  <Tab
+                     action="activate"
+                     onClick={() => setCategorys("Dump Truck")}
+                     className="cursor-pointer btn btn-primary">
+                     Dump Truck
+                  </Tab>
+                  <Tab
+                     onClick={() => setCategorys("Racing Car")}
+                     className="cursor-pointer btn btn-primary">
+                     Bike
+                  </Tab>
+               </TabList>
+               {card}
+               <TabPanel></TabPanel>
+               {/* <TabPanel>{card}</TabPanel>
             <TabPanel>{card}</TabPanel> */}
-         </Tabs>
+            </Tabs>
+         </div>
       </div>
    );
 };
