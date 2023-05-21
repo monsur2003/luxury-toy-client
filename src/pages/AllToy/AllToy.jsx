@@ -15,6 +15,12 @@ const AllToy = () => {
    console.log("toys from server", toys);
    useTitle("Altoy");
 
+   const handleSearch = (event) => {
+      event.preventDefault();
+      const name = event.target.name.value;
+      console.log(name);
+   };
+
    return (
       <>
          <div>
@@ -22,13 +28,17 @@ const AllToy = () => {
                All Toy List{" "}
             </h2>
          </div>
-         <form className=" flex my-6 justify-center items-center ">
+         <form
+            onSubmit={handleSearch}
+            className=" flex my-6 justify-center items-center ">
             <div>
-               <input className="input rounded-r-none" type="text" />
+               <input
+                  name="name"
+                  className="input rounded-r-none"
+                  type="text"
+               />
             </div>
-            <div>
-               <input className="input mx-2 rounded-none" type="text" />
-            </div>
+
             <input
                type="submit"
                className="btn btn-primary rounded-l-none"

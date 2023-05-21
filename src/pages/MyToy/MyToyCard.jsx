@@ -18,22 +18,18 @@ const MyToyCard = ({ toy, handleDelete }) => {
    } = toy;
 
    return (
-      <div className=" w-[50%] mx-auto bg-base-200 my-3  rounded-2xl   h-[210px]   card-side border border-pink-400  shadow-xl">
+      <div className=" w-[90%] mx-auto my-6 rounded-2xl flex items-center space-x-6 h-[260px]   card-side  bg-base-100 shadow-xl">
          <figure>
-            <img
-               className="w-[300px] h-[210px] rounded-2xl"
-               src={photo}
-               alt="Movie"
-            />
+            <img className="h-[260px]" src={photo} alt="Movie" />
          </figure>
-         <div className="w-full mr-3">
+         <div className=" flex justify-between w-full mr-3">
             <div>
                <h2 className="card-title">{name}</h2>
                <p>{quantity}</p>
                <p>{sellerName}</p>
                <p>{price + "$ "}</p>
             </div>
-            <div className="flex flex-col items-center px-4 space-y-3">
+            <div className="flex flex-col items-center space-y-3">
                <button className="btn btn-primary">
                   <FaEye className="text-[17px]" />
                </button>

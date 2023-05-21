@@ -8,26 +8,37 @@ const Offer = () => {
          <div className="grid grid-cols-2 md:w-2/3 gap-4">
             <img
                src={img2}
+               data-aos="fade-right"
+               data-aos-duration="1000"
                className="md:w-[500px] w-full  md:rounded-tl-[30%]   rounded-md "
                alt=""
             />
             <img
                src={img2}
+               data-aos="fade-left"
+               data-aos-duration="1000"
                className="md:w-[500px] w-full rounded-md  "
                alt=""
             />
             <img
                src={img2}
+               data-aos="fade-right"
+               data-aos-duration="1000"
                className="md:w-[500px] w-full  rounded-md "
                alt=""
             />
             <img
                src={img2}
+               data-aos="fade-left"
+               data-aos-duration="1000"
                className="md:w-[500px] w-full md:rounded-br-[30%] rounded-md  "
                alt=""
             />
          </div>
-         <div className="text-center md:text-start">
+         <div
+            data-aos-duration="1000"
+            data-aos="zoom-out-up"
+            className="text-center md:text-start">
             <h2 className="text-6xl my-8 font-bold">
                <span className="lilita text-7xl animate-pulse text-red-500">
                   {" "}
