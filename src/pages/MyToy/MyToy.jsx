@@ -2,15 +2,16 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Home/Home/Providers/AuthProvider";
 import MyToyCard from "./MyToyCard";
 import Swal from "sweetalert2";
+import useTitle from "../../hook/useTitle";
 
 const MyToy = () => {
    const { user } = useContext(AuthContext);
    const [toys, setToys] = useState([]);
-   console.log(toys);
+   useTitle("Mytoys");
 
    useEffect(() => {
-      //   fetch(`http://localhost:5000/toys?email=${user?.email}`)
-      fetch("http://localhost:5000/toys")
+      fetch(`http://localhost:5000/toys?email=${user?.email}`)
+         // fetch("http://localhost:5000/toys")
          .then((res) => res.json())
          .then((data) => setToys(data));
    }, []);
@@ -55,7 +56,7 @@ const MyToy = () => {
    return (
       <div>
          {/* <h3>My toy {toys.length}</h3> */}
-         <div className="bg-[#242933] py-6">
+         <div className="bg-[#242933] grid grid-cols-1 md:grid-cols-2 py-6">
             {toys.map((toy) => (
                <MyToyCard
                   handleDelete={handleDelete}

@@ -30,24 +30,24 @@ const AddToy = () => {
       };
       console.log(toy);
 
-      //    fetch("http://localhost:5000/toys", {
-      //       method: "POST",
-      //       headers: {
-      //          "content-type": "application/json",
-      //       },
-      //       body: JSON.stringify(toy),
-      //    })
-      //       .then((res) => res.json())
-      //       .then((data) => {
-      //          if (data.insertedId) {
-      //             Swal.fire({
-      //                title: "Product added successfully!",
-      //                text: "Thanks for add product",
-      //                icon: "success",
-      //                confirmButtonText: "Okey",
-      //             });
-      //          }
-      //       });
+      fetch("http://localhost:5000/toys", {
+         method: "POST",
+         headers: {
+            "content-type": "application/json",
+         },
+         body: JSON.stringify(toy),
+      })
+         .then((res) => res.json())
+         .then((data) => {
+            if (data.insertedId) {
+               Swal.fire({
+                  title: "Product added successfully!",
+                  text: "Thanks for add product",
+                  icon: "success",
+                  confirmButtonText: "Okey",
+               });
+            }
+         });
    };
 
    return (
@@ -119,7 +119,7 @@ const AddToy = () => {
                   </label>
                   <select name="category" className="input select w-full" id="">
                      <option value="Sports">Sports Car</option>
-                     <option value="Racing Car"> Racing Car</option>
+                     <option value="Racing Car"> Bike</option>
                      <option value="Dump Truck">Dump Truck</option>
                   </select>
                </div>

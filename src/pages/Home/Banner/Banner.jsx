@@ -1,44 +1,17 @@
 import React, { useEffect, useState } from "react";
-import AwesomeSlider from "react-awesome-slider";
-import withAutoplay from "react-awesome-slider/dist/autoplay";
+
 import "react-awesome-slider/dist/styles.css";
-import background1 from "../../../assets/banner/banner-4 (1).jpg";
-import background2 from "../../../assets/banner/banner-2.jpg";
-import background3 from "../../../assets/banner/banner-3.jpg";
-import background4 from "../../../assets/banner/banner-3.jpg";
+import banner from "../../../assets/banner/banner.jpg";
 
 const Banner = () => {
-   const [activeImageIndex, setActiveImageIndex] = useState(0);
-   const backgroundImages = [
-      background1,
-      background2,
-      background4,
-      background3,
-   ];
-   const animationClasses = [
-      "animate-fadeIn",
-      "animate-fadeIn",
-      "animate-fadeIn",
-   ];
-   const changeBackgroundImage = () => {
-      const newIndex = (activeImageIndex + 1) % backgroundImages.length;
-      setActiveImageIndex(newIndex);
-   };
-   useEffect(() => {
-      const timer = setInterval(changeBackgroundImage, 2000);
-
-      return () => {
-         clearInterval(timer);
-      };
-   }, []);
-
    return (
       <div
-         className={`banner  md:h-[90vh]  bg-cover bg-center ${animationClasses[activeImageIndex]} transition duration-500`}
+         className={`banner  md:h-[90vh]  bg-cover bg-center`}
+         data-aos="zoom-in"
          style={{
-            backgroundImage: `url(${backgroundImages[activeImageIndex]})`,
+            backgroundImage: `url(${banner})`,
          }}>
-         <div className=" bg-gradient-to-t from-[#1c0b37f2] to-[#14052555] w-full h-full">
+         <div className=" bg-gradient-to-t from-[#090834cf] to-[#14052555] w-full h-full">
             {" "}
             <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
                <div className="flex flex-col items-center md:pt-28 justify-center">

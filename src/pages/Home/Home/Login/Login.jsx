@@ -4,8 +4,10 @@ import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import useTitle from "../../../../hook/useTitle";
 const Login = () => {
    const { signWithGmail, loginUser } = useContext(AuthContext);
+   useTitle("Login");
    const handleLogin = (event) => {
       event.preventDefault();
 

@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import Swal from "sweetalert2";
+import useTitle from "../../../../hook/useTitle";
 
 const Register = () => {
    const { createUser, signWithGmail } = useContext(AuthContext);
-
+   useTitle("Register");
    const handleSubmit = (event) => {
       event.preventDefault();
 
@@ -47,11 +48,13 @@ const Register = () => {
    return (
       <div>
          <div className="relative flex flex-col md:flex-row  p-28 w-full my-6 bg-[#242933] overflow-hidden">
-            <div className="w-[60%] h-fit">
+            <div data-aos="fade-right" className="w-[60%] h-fit">
                <img className="" src={login} alt="" />
             </div>
 
-            <div className="w-[60%] h-fit  p-6 border border-pink-500  backdrop-blur-md bg-[#242940]   rounded-md shadow-xl ">
+            <div
+               data-aos="fade-left"
+               className="w-[60%]  h-fit  p-6 border border-pink-500  backdrop-blur-md bg-[#242940]   rounded-md shadow-xl ">
                <h1 className="text-3xl font-semibold text-center lilita tracking-widest uppercase">
                   Please Register
                </h1>

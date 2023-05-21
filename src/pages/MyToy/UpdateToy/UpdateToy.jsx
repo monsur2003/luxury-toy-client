@@ -1,9 +1,11 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import useTitle from "../../../hook/useTitle";
 
 const UpdateToy = () => {
    const toys = useLoaderData();
+   useTitle("updateToy");
    //    const { id } = useParams();
    const {
       name,

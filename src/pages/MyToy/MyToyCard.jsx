@@ -18,7 +18,7 @@ const MyToyCard = ({ toy, handleDelete }) => {
    } = toy;
 
    return (
-      <div className=" w-[60%]  mx-auto bg-base-200 my-3  rounded-2xl flex items-center space-x-6 h-[210px]   card-side border border-pink-400  shadow-xl">
+      <div className=" w-[50%] mx-auto bg-base-200 my-3  rounded-2xl   h-[210px]   card-side border border-pink-400  shadow-xl">
          <figure>
             <img
                className="w-[300px] h-[210px] rounded-2xl"
@@ -26,7 +26,7 @@ const MyToyCard = ({ toy, handleDelete }) => {
                alt="Movie"
             />
          </figure>
-         <div className=" flex justify-between w-full mr-3">
+         <div className="w-full mr-3">
             <div>
                <h2 className="card-title">{name}</h2>
                <p>{quantity}</p>
