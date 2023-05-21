@@ -2,6 +2,8 @@ import React from "react";
 import { useLoaderData } from "react-router-dom";
 
 import useTitle from "../../hook/useTitle";
+import Rating from "react-rating";
+import { FaRegStar, FaStar } from "react-icons/fa";
 
 const ViewDetails = () => {
    const data = useLoaderData();
@@ -45,8 +47,15 @@ const ViewDetails = () => {
                         <p className=" text-gray-300 text-[18px] font-semibold border-gray-300 p-2">
                            <span>Price:</span> {price}
                         </p>
-                        <p className=" text-gray-300 text-[18px] font-semibold border-gray-300 p-2">
-                           <span>Rating</span> {rating}
+                        <p className=" text-gray-300 flex items-center gap-x-2 text-[18px] font-semibold border-gray-300 p-2">
+                           <Rating
+                              className="text-2xl text-yellow-400 "
+                              readonly
+                              placeholderRating={rating}
+                              emptySymbol={<FaRegStar></FaRegStar>}
+                              placeholderSymbol={<FaStar></FaStar>}
+                              fullSymbol={<FaStar></FaStar>}></Rating>
+                           <p className="text-[20px] font-semibold">{rating}</p>
                         </p>
                         <p className="border-b-2 text-gray-300 text-[18px] font-semibold border-gray-300 p-2">
                            <span>Quantity</span> {quantity}

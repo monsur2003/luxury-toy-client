@@ -31,11 +31,11 @@ Create a woCommerce based web application
 
 ## Project Name
 
--  T
+-
 
 ## Description
 
-I will create this website for finding Foodie and it's my assignment project
+I will create this website for Selling toys car and it's my assignment project
 Installation
 To install the project dependencies, run the following command in your terminal:
 Copy code
